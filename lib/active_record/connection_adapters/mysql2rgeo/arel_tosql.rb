@@ -25,7 +25,7 @@ module Arel  # :nodoc:
       end
 
       def visit_String(node, collector)
-        collector << "#{st_func('ST_WKTToSQL')}(#{quote(node)})"
+        collector << "#{st_func('ST_WKTToSQL')}(#{quote(node)}, 4326)"
       end
 
       def visit_RGeo_ActiveRecord_SpatialNamedFunction(node, collector)
